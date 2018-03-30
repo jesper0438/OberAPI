@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Product;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -12,9 +13,17 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
-            'name' => 'Van der Valk',
-            'place' => 'Middelbuerg',
-            'adress' => 'Podium',
-        ]);    }
+        $faker = \Faker\Factory::create();
+
+        //50 Sample products will be seeded into the database
+         for ($i = 0; $i < 50; $i++) {
+            Product::create([
+                'name' => $faker->name,
+                'place' => $faker->citySuffix,
+                'adress' => $faker->address,
+            ]);
+        }
+
+    }
+        
 }
