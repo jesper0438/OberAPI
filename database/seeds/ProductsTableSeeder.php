@@ -20,7 +20,7 @@ class ProductsTableSeeder extends Seeder
             Product::create([
                 'name' => $faker->name,
                 'place' => $faker->citySuffix,
-                'adress' => $faker->address,
+                'address' => $faker->address,
             ]);
         }
 

@@ -11,4 +11,24 @@ class ProductController extends Controller
 
     	return new ProductResource(Product::find($id));
     }
+
+    // first start to receive an array after API-call (GET-req.)
+    public function arraytest() {
+    	$arraytest = [
+
+	[	
+		'name' => 'Jepper',
+		'place' => 'School',
+		'address' => 'eenstraat'
+	],
+
+	[ 
+		'name' => 'Jano',
+	  	'place' => 'Ookopschool',
+	  	'address' => 'geheim'
+	]
+
+
+		];
+    }
 }
